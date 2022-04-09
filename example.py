@@ -11,17 +11,17 @@ import argparse
 from Format import VOC, COCO, UDACITY, KITTI, YOLO
 
 parser = argparse.ArgumentParser(description='label Converting example.')
-parser.add_argument('--datasets', type=str, help='type of datasets')
-parser.add_argument('--img_path', type=str, help='directory of image folder')
-parser.add_argument('--label', type=str,
+parser.add_argument('--datasets', type=str,default="VOC", help='type of datasets')
+parser.add_argument('--img_path', type=str,default="./example/voc/JPEG", help='directory of image folder')
+parser.add_argument('--label', type=str,default="./example/voc/label",
                     help='directory of label folder or label file path')
-parser.add_argument('--convert_output_path', type=str,
+parser.add_argument('--convert_output_path',default="./example/output", type=str,
                     help='directory of label folder')
-parser.add_argument('--img_type', type=str, help='type of image')
+parser.add_argument('--img_type',  default= ".jpg",type=str, help='type of image')
 parser.add_argument('--manifest_path', type=str,
                     help='directory of manipast file', default="./")
 parser.add_argument('--cls_list_file', type=str,
-                    help='directory of *.names file', default="./")
+                    help='directory of *.names file', default="./example/voc/names.txt")
 
 
 args = parser.parse_args()

@@ -245,7 +245,7 @@ class VOC:
                 15), suffix='Complete', length=40)
             for filename in filenames:
 
-                xml = open(os.path.join(dir_path, filename), "r")
+                xml = open(os.path.join(dir_path, filename), "r",encoding='UTF-8')
 
                 tree = Et.parse(xml)
                 root = tree.getroot()
@@ -607,7 +607,7 @@ class YOLO:
     """
 
     def __init__(self, cls_list_path, cls_hierarchy={}):
-        with open(cls_list_path, 'r') as file:
+        with open(cls_list_path, 'r',encoding='UTF-8') as file:
             l = file.read().splitlines()
 
         self.cls_list = l
